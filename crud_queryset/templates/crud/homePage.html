@@ -1,1 +1,28 @@
-<h1>welcome</h1>
+{% load sass_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+        <link href="{% sass_src 'scss/index.scss' %}" rel="stylesheet" type="text/css" />
+        <title>Django Sass</title>
+    </head>
+
+    <body>
+        <h3>Vacation Planner</h3>
+        <div class="todoList">
+            <div class="cover-img">
+                <div class="cover-inner">
+                   
+                </div>
+            </div>
+            <div class="content">
+              {%include 'tasks/addTask.html'%} 
+              {%include 'tasks/tasksList.html'%} 
+            </div>
+        </div>
+    </body>
+</html>

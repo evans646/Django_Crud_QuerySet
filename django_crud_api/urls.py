@@ -22,5 +22,5 @@ import  crud_queryset.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',crud_queryset.views.homepage, name='home-page'),
-
+    path('add_task',crud_queryset.views.add_task, name='add-task'),
 ]

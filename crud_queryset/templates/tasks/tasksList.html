@@ -1,0 +1,11 @@
+<ul class="tasks">
+    {%for task in tasksLists.all%}
+    <li>
+        <input type="checkbox" id="todo_1" />
+        <label for="todo_1">
+            <span class="check"></span>{{task.name}}
+        </label>
+        <i class="far fa-trash-alt delete"></i>
+    </li>
+    {%endfor%}
+</ul>
