@@ -5,6 +5,7 @@ from django.utils.timezone import now
 class Task(models.Model):
      name = models.CharField(max_length=120, unique=True)
      description = models.TextField(blank=True)
+     iscompleted = models.BooleanField(default=False)
   
      
     #   def __str__(self):
