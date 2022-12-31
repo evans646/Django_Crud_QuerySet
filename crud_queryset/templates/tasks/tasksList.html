@@ -1,16 +1,10 @@
-<ul class="tasks">
+<div class="container task-lists">
+  <div class="row mt-5">
+    <h2>All Tasks</h2>
     {%for task in taskLists.all%}
-    <li>
-        <input type="checkbox" id="todo_1" />
-        <label for="todo_1">
-            <span class="check"></span>
-           {%if task.iscompleted%}
-            {{task.name}}
-            {% else %}
-            <span class="check"></span> {{task.name}}
-            {%endif%}
-        </label>
-        <i class="far fa-trash-alt delete"></i>
-    </li>
+      <a href="#" class="preview-card__button">{{task.name}}<sup>
+        View
+    </sup></a>
     {%endfor%}
-</ul>
+  </div>
+</div>

@@ -1,13 +1,28 @@
-<section>
+<section class="form-wrapper">
     <form class="add-task"  action="{%url 'add-task'%}" method="POST">
         {% csrf_token %}
-        <input type="text" name="name" placeholder="Task...">
-        <input type="text" name="description" placeholder="Task description...">
-        <div class="input-buttons">
-            {% comment %} <a href="#" class="add-todo">
-                <i class="fas fa-plus add"></i>
-            </a> {% endcomment %}
-            <input type="submit" value="Add" class="add-todo">
+        <div class="container pt-5">
+            <div class="row">
+              <div class="col-12">
+                <h1 class="fs-1 mb-3">Add new item below</h1>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="floating-form mb-3">
+                  <input type="text" class="form-control" id="name"  name="name" autocomplete="off" required />
+                  <label for="name">Name</label>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="floating-form mb-3">
+                  <input type="text-" class="form-control" id="description"  name="description" autocomplete="off" required />
+                  <label for="description">Description</label>
+                </div>
+              </div>
+            </div>
+          </div>
+            <button  type="submit" align="right">
+                <i  class="fas fa-plus add"></i>
+            </button>
         </div>
     </form>
 </section>
