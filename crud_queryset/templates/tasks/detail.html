@@ -1,0 +1,20 @@
+{%extends 'crud/base.html'%}
+{% block content %}
+<section class="container">
+    <main style="text-align:center;padding: 6px;">
+        <section class="text-center">
+          <div class="container">
+            <h1 class="jumbotron-heading pt-3">Task details</h1>
+            <hr class="star-primary"> 
+            <p class="lead text-muted">{{task.name}}</p>
+            <p class="lead text-muted py-5">{{task.description}}</p>
+            <p>
+              <a href="{%url 'home-page' %}" class="btn btn-primary my-2">Back to home</a>
+              <a href="{%url 'update-task' task.id %}" class="btn btn-secondary my-2">Edit Task</a>
+              <a href="{%url 'delete-task' task.id %}" class="btn btn-danger my-2">Delete</a>
+            </p>
+          </div>
+        </section>
+      </main>
+</section>
+{%endblock%}

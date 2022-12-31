@@ -1,7 +1,0 @@
-<div>
-  <form action="{% url 'update-task' task.id %}" method="post">
-    {% csrf_token %}
-    {{ taskform }}
-    <input type="submit" value="Edit task">
-</form>
-</div>

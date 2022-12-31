@@ -1,0 +1,20 @@
+{%extends 'crud/base.html'%}
+{% block content %}
+<center class="search-results">
+    {%if searched%}
+      <h1>You searched for...{{searched}}</h1>
+      <br/>
+        <div class="container task-lists">
+            <div class="row mt-5  results">
+              {%for searchedItem in searched_results.all%}
+                <a   href="{% url 'detail' searchedItem.id %}"style="color:#000">
+                    {{searchedItem.name}}
+                </a>
+              {%endfor%}
+            </div>
+          </div>
+    {%else%}
+      <h1> You forgot to search for something... </h1>
+    {% endif %}
+</center>
+{% endblock %} 

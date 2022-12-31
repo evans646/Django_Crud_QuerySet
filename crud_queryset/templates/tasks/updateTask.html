@@ -1,0 +1,17 @@
+{%extends 'crud/homepage.html'%}
+{% block content %}
+<div class="py-5 container" align="center">
+  <h1>Edit Task here</h1>
+  <form action="{% url 'update-task' task.id %}" method="post">
+    {% csrf_token %}
+    {{ taskform }}
+    <button  type="submit" align="right">
+      Edit ✏️
+  </button>
+    <button  type="submit" align="right">
+      Cancel edit ❌
+  </button>
+    
+</form>
+</div>
+{% endblock %} 

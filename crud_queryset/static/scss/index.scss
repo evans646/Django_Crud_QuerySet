@@ -68,6 +68,7 @@ button{
   padding: 10px;
   width: 20%;
   background-color: #1d0b0b;
+  color: white;
   margin-left: 51%;
 }
 button i{
@@ -81,13 +82,16 @@ button i{
    width:10%;
    padding:6px 6px;
    margin-top: 5px;
+
 }
 .task-lists a{
   padding: 6px;
-  color: #3073b7 ;
+  color: #3073b7 !important;
 }
 
-
+.results a a{
+  color: #1d0b0b !important;
+}
 @media screen and (max-width: 576px) {
   .form-wrapper{
     width: 500px !important;
