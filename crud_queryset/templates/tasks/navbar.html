@@ -10,7 +10,7 @@
             <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}">Home</a>
           </li>
         </ul>
-        <form class="d-flex" role="search" method="post" action="{%url 'search-site'%}">
+        <form class="d-flex" role="search" action="{%url 'search-site'%}" method="post">
           {% csrf_token %}
           <input class="form-control me-2" type="search" name="searched" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success ml-3" type="submit" style="width:100px">Search</button>

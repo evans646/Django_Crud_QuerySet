@@ -3,13 +3,16 @@ from django.db.models import Q
 from django.core.paginator import Paginator
 from .form import TaskForm
 from .models import Task
+
+
+ 
 # Create your views here.
-
-
 def homepage(request):
-    paginator = Paginator(Task.objects.all(),3)
+    task_lists = Task.objects.all()
+    paginator = Paginator(task_lists,4)
     page = request.GET.get('page')
     tasks = paginator.get_page(page)
+    # tasks = Task.objects.all()
     return render(request,'crud/homePage.html', {'tasks':tasks})
 
 
