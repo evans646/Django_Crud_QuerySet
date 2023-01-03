@@ -1,19 +1,13 @@
 from django.shortcuts import render,redirect,get_object_or_404
-from django.db.models import Q
 from django.core.paginator import Paginator
 from .form import TaskForm
 from .models import Task
 
 
- 
-# Create your views here.
+ # Create your views here.
 def homepage(request):
-    task_lists = Task.objects.all()
-    paginator = Paginator(task_lists,4)
-    page = request.GET.get('page')
-    tasks = paginator.get_page(page)
-    # tasks = Task.objects.all()
-    return render(request,'crud/homePage.html', {'tasks':tasks})
+    new_tasks = Task.objects.all()
+    return render(request,'crud/homePage.html', {'tasks':new_tasks})
 
 
 def add_task(request):
@@ -25,10 +19,16 @@ def add_task(request):
                 return redirect('/')
             return redirect('/') 
                      
-                           
+def all_tasks_list(request):
+    task_lists = Task.objects.all()
+    paginator = Paginator(task_lists,4)
+    page = request.GET.get('page')
+    all_tasks = paginator.get_page(page)
+    return render(request, 'tasks/allTasksPage.html', {'all_tasks':all_tasks})
+                              
                            
 def view_task(request,pk):
-      task_detail = get_object_or_404(Task, pk=pk) #every model in the db has a pk(primary key)
+      task_detail = get_object_or_404(Task, pk=pk) 
       return render(request, 'tasks/detail.html', {'task':task_detail})                       
                          
 def update_task(request, pk):
@@ -45,7 +45,7 @@ def update_task(request, pk):
 def search_everything(request):
     if request.method == 'POST':
         searched = request.POST['searched']
-        search_results = Task.objects.filter(Q(name__contains=searched) | Q(description__contains=searched))
+        search_results = Task.objects.filter(name__contains=searched)
         return render(request, 'interface/searchResults.html',{'searched':searched,'searched_results':search_results})
     else:
         return redirect('/')      

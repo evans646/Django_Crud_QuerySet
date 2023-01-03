@@ -1,6 +1,6 @@
 <div class="container task-lists">
   <div class="row mt-5">
-    <h2>All Tasks</h2>
+    <h2>New Tasks</h2>
     <ul style="list-style:none">
     {%for task in tasks.all%}
       <li  style="padding:5px">
@@ -11,22 +11,5 @@
     {%endfor%}
     <ul>
   </div>
-  <p align="center">Page {{tasks.number}} of {{tasks.paginator.num_pages}}</p>
- <span aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-        {%if tasks.has_previous%}
-      <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
-      <li class="page-item">
-        <a class="page-link" href="?page={{tasks.previous_page_number}}" tabindex="-1">Previous</a>
-      </li>
-      {%endif%}
-      {%if tasks.has_next%}
-      <li class="page-item">
-        <a class="page-link" href="?page={{tasks.next_page_number}}">Next</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="?page={{tasks.paginator.num_pages}}">Last</a></li>
-      {%endif%}
-    </ul>
-  </span>
 </div>
 

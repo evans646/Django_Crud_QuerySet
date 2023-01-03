@@ -9,6 +9,9 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'home-page' %}">Home</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{% url 'all-tasks' %}">All Tasks</a>
+          </li>
         </ul>
         <form class="d-flex" role="search" action="{%url 'search-site'%}" method="post">
           {% csrf_token %}

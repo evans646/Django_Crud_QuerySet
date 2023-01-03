@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',crud_queryset.views.homepage, name='home-page'),
     path('add_task',crud_queryset.views.add_task, name='add-task'),
+    path('all_tasks',crud_queryset.views.all_tasks_list, name='all-tasks'),
     path('task/<int:pk>',crud_queryset.views.view_task,name='detail'),
     path('task/<int:pk>/update', crud_queryset.views.update_task, name='update-task'),
     path('task/<int:pk>/delete', crud_queryset.views.delete_task, name='delete-task'),

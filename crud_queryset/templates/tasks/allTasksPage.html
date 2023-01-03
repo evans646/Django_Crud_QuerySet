@@ -1,0 +1,34 @@
+{%extends 'crud/base.html'%}
+{% block content %}
+<div class="container task-lists">
+    <div class="row mt-5">
+      <h2>All Tasks</h2>
+      <ul style="list-style:none">
+      {%for task in all_tasks%}
+        <li  style="padding:5px">
+            <a  href="{% url 'detail' task.id %}">{{task.name}}
+                <sup>View</sup>  <a href="{% url 'detail' task.id %}"></a>
+              </a>
+        </li>
+      {%endfor%}
+      <ul>
+    </div>
+    <p align="center">Page {{all_tasks.number}} of {{all_tasks.paginator.num_pages}}</p>
+   <span aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+          {%if all_tasks.has_previous%}
+        <li class="page-item"><a class="page-link" href="?page=1">First</a></li>
+        <li class="page-item">
+          <a class="page-link" href="?page={{all_tasks.previous_page_number}}" tabindex="-1">Previous</a>
+        </li>
+        {%endif%}
+        {%if all_tasks.has_next%}
+        <li class="page-item">
+          <a class="page-link" href="?page={{all_tasks.next_page_number}}">Next</a>
+        </li>
+        <li class="page-item"><a class="page-link" href="?page={{all_tasks.paginator.num_pages}}">Last</a></li>
+        {%endif%}
+      </ul>
+    </span>
+  </div>
+{%endblock%}
