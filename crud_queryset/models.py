@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.timezone import now
+
 
 # Create your models here.
 class Task(models.Model):
@@ -7,8 +7,6 @@ class Task(models.Model):
      description = models.TextField(blank=True)
      iscompleted = models.BooleanField(default=False)
     
-
-
      class Meta:
         ordering = ['name']
   
