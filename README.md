@@ -3,9 +3,8 @@
         Django QuerySet Demo
     </h1>
     <p>    
-      A simple CRUD project using Python and Django
-      Django And Bootstrap
-      It features:
+      A simple CRUD project using Python and Django And Bootstrap
+      . It features:
     </p>
 <ul>
     <li>Create</li>
